@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   # Standard routes
   root to: "home#index"
   resources :users, only: [:edit, :update]
+
+  # Custom routes
+  get "/faq", to: "home#faq", as: :faq
 end
