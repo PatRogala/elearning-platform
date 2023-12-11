@@ -2,6 +2,21 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# inconsistencies and inefficiencies between a database schema and application models
+gem "database_consistency", groups: [:development, :test]
+
+# Brakeman analyzes our code for security vulnerabilities
+gem "brakeman"
+
+# bundler-audit checks our dependencies for vulnerabilities
+gem "bundler-audit"
+
+# RuboCop checks our code for style violations
+gem "rubocop", group: :development
+gem "rubocop-rails", group: :development
+gem "rubocop-rspec", group: :development
+gem "rubocop-performance", group: :development
+
 # dotenv is used to load environment variables from a .env file into ENV
 gem "dotenv-rails", groups: [:development, :test]
 
