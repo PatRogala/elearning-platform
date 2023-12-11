@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LearningPlatform</title>
+    <title>FancyDev - Programming Courses</title>
+    <meta charset="utf-8">
+    <meta name="description" content="FancyDev is a programming courses platform">
+    <meta name="keywords" content="programming, courses, ruby, ruby on rails, bootcamp">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,7 +13,10 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body class="--font-Josefin --font-Poppin bg-gradient-to-b bg-no-repeat from-gray-900 to-black">
+    <%= render "shared/header" %>
+    <%= render "shared/flash", flash: flash %>
     <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>
