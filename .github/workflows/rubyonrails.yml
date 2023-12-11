@@ -38,7 +38,7 @@ jobs:
         run: bin/rails db:schema:load
       # Precompile assets
       - name: Assets Precompile
-        run: bundle exec rake assets:precompile
+        run: yarn build:css
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
