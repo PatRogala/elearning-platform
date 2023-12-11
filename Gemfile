@@ -1,6 +1,23 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby "3.2.2"
+
+# shoulda-matchers provides RSpec-compatible one-liners to test common Rails functionality
+gem "shoulda-matchers", group: :test
+
+# faker generates fake data for you
+gem "faker", groups: %i[development test]
+
+# factory_bot_rails is a fixtures replacement with a more straightforward syntax
+gem "factory_bot_rails", groups: %i[development test]
+
+# rspec-rails is a testing framework for Rails
+gem "rspec-rails", "~> 6.1.0", groups: %i[development test]
+
+# devise is a popular authentication library for Rails
+gem "devise"
 
 # inconsistencies and inefficiencies between a database schema and application models
 gem "database_consistency", groups: [:development, :test]
@@ -18,7 +35,7 @@ gem "rubocop-rspec", group: :development
 gem "rubocop-performance", group: :development
 
 # dotenv is used to load environment variables from a .env file into ENV
-gem "dotenv-rails", groups: [:development, :test]
+gem "dotenv-rails", groups: %i[development test]
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
