@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbo:load', () => {
   const toggleButton = document.querySelector('[data-collapse-toggle="mobile-menu-2"]');
   const menu = document.getElementById('mobile-menu-2');
 
