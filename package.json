@@ -10,7 +10,13 @@
     "tailwindcss": "^3.3.6"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
+    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
+    "failure:js": "rm ./app/assets/builds/application.js && rm ./app/assets/builds/application.js.map",
+    "dev": "tsc-watch --noClear -p tsconfig.json  --onSuccess \"yarn build:js\" --onFailure \"yarn failure:js\""
+  },
+  "devDependencies": {
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.3.3"
   }
 }

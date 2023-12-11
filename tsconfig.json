@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "declaration": false, // Don't generate .d.ts files for every TypeScript or JavaScript file inside your project.
+    "emitDecoratorMetadata": true, // Enables experimental support for emitting type metadata for decorators
+    "experimentalDecorators": true, // Enables experimental support for decorators, which is a version of decorators that predates the TC39 standardization process.
+    "lib": ["es2019", "dom"], // Includes a default set of type definitions for built-in JS APIs
+    "jsx": "react", // Controls how JSX constructs are emitted in JavaScript files.
+    "module": "es6", // Sets the module system for the program
+    "moduleResolution": "node", // Specify the module resolution strategy
+    "baseUrl": ".", // Sets a base directory from which to resolve bare specifier module names
+    "paths": { // A series of entries which re-map imports to lookup locations relative to the baseUrl
+      "*": ["node_modules/*", "app/packs/*"]
+    },
+    "sourceMap": true, // Enables the generation of sourcemap files. These files allow debuggers and other tools to display the original TypeScript source code when actually working with the emitted JavaScript files.
+    "target": "es2019", // The target setting changes which JS features are downleveled and which are left intact.
+    "noEmit": true // Do not emit compiler output files like JavaScript source code, source-maps or declarations.
+  },
+  "exclude": ["**/*.spec.ts", "node_modules", "vendor", "public"], // Specifies an array of filenames or patterns that should be skipped when resolving include.
+  "compileOnSave": false
+}
