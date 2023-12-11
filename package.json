@@ -10,6 +10,7 @@
     "tailwindcss": "^3.3.6"
   },
   "scripts": {
+    "build": "yarn build:js && yarn build:css",
     "build:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets",
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify",
     "failure:js": "rm ./app/assets/builds/application.js && rm ./app/assets/builds/application.js.map",
