@@ -15,6 +15,7 @@ Welcome to our open-source eLearning platform—a collaborative space for creati
 
 [![Ruby][Ruby]][Ruby-url]
 [![Ruby-on-rails][Ruby-on-rails]][Ruby-on-rails-url]
+[![Hotwire][Hotwire]][Hotwire-url]
 [![Nodejs][Nodejs]][Nodejs-url]
 [![Typescript][Typescript]][Typescript-url]
 [![Tailwind][Tailwind]][Tailwind-url]
@@ -55,15 +56,17 @@ in the UNIX environment
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/patrogala
 [product-screenshot]: preview.png
-[Ruby]: https://img.shields.io/badge/Ruby_3.2.2-D51F06?style=for-the-badge&logo=ruby&logoColor=white
+[Ruby]: https://img.shields.io/badge/Ruby_3-D51F06?style=for-the-badge&logo=ruby&logoColor=white
 [Ruby-url]: https://www.ruby-lang.org/en/
-[Ruby-on-rails]: https://img.shields.io/badge/Rails_7.1.2-cc0000?style=for-the-badge&logo=RubyOnRails&logoColor=white
+[Ruby-on-rails]: https://img.shields.io/badge/Rails_7-cc0000?style=for-the-badge&logo=RubyOnRails&logoColor=white
 [Ruby-on-rails-url]: https://rubyonrails.org/
-[Tailwind]: https://img.shields.io/badge/Tailwind_3-06b6d4?style=for-the-badge&logo=Tailwindcss&logoColor=white
+[Tailwind]: https://img.shields.io/badge/Tailwind-06b6d4?style=for-the-badge&logo=Tailwindcss&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
-[Typescript]: https://img.shields.io/badge/Typescript_5.3-007acc?style=for-the-badge&logo=Typescript&logoColor=white
+[Typescript]: https://img.shields.io/badge/Typescript-007acc?style=for-the-badge&logo=Typescript&logoColor=white
 [Typescript-url]: https://www.typescriptlang.org
-[Nodejs]: https://img.shields.io/badge/Node.js_20.10.0-3c873a?style=for-the-badge&logo=Node.js&logoColor=white
+[Nodejs]: https://img.shields.io/badge/Node.js_20-3c873a?style=for-the-badge&logo=Node.js&logoColor=white
 [Nodejs-url]: https://nodejs.org/en
 [Docker]: https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=Docker&logoColor=white
 [Docker-url]: https://www.docker.com
+[Hotwire]: https://img.shields.io/badge/Turbo-5CD8E5?style=for-the-badge&logo=Turbo&logoColor=black
+[Hotwire-url]: https://turbo.hotwire.dev/
