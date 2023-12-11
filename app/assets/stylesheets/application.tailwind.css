@@ -57,11 +57,3 @@ body {
 .alert {
   @apply w-full text-center text-[18px];
 }
-
-#mobile-menu-2 {
-  display: none;
-}
-
-#mobile-menu-2.open {
-  display: block;
-}

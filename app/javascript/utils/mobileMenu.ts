@@ -4,7 +4,7 @@ document.addEventListener('turbo:load', () => {
 
   if (toggleButton && menu) {
     toggleButton.addEventListener('click', () => {
-      menu.classList.toggle('open');
+      menu.classList.toggle('hidden');
     });
   }
 });
