@@ -7,6 +7,8 @@
 
 # About The Project
 
+![preview.png](preview.png)
+
 Welcome to our open-source eLearning platform—a collaborative space for creating and sharing engaging courses. Whether you're a seasoned instructor or a passionate subject matter expert, our user-friendly interface and versatile features empower you to craft interactive and comprehensive learning experiences. Join us in shaping the future of online education and fostering a global community of lifelong learners.
 
 ## Built With
