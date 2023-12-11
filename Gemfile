@@ -2,6 +2,21 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# shoulda-matchers provides RSpec-compatible one-liners to test common Rails functionality
+gem "shoulda-matchers", group: :test
+
+# faker generates fake data for you
+gem "faker", groups: [:development, :test]
+
+# factory_bot_rails is a fixtures replacement with a more straightforward syntax
+gem "factory_bot_rails", groups: [:development, :test]
+
+# rspec-rails is a testing framework for Rails
+gem "rspec-rails", "~> 6.1.0", groups: [:development, :test]
+
+# devise is a popular authentication library for Rails
+gem "devise"
+
 # dotenv is used to load environment variables from a .env file into ENV
 gem "dotenv-rails", groups: [:development, :test]
 
