@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get "/faq", to: "home#faq", as: :faq
   get "/profile", to: "users#show", as: :profile
   get "/profile/edit", to: "users#edit", as: :edit_profile
+  put "/profile", to: "users#update"
 end
