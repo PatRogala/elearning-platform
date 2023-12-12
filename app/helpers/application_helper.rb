@@ -2,6 +2,6 @@
 
 module ApplicationHelper
   def company_name
-    ENV['COMPANY_NAME']
+    ENV.fetch("COMPANY_NAME", nil)
   end
 end

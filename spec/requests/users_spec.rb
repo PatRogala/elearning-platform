@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe "Users", type: :request do
+RSpec.describe "Users" do
   subject(:user) { create(:user) }
 
   describe "unauthenticated user" do
@@ -47,7 +47,12 @@ RSpec.describe "Users", type: :request do
       it "returns http redirect" do
         put profile_path, params: { user: { fullname: "New Name" } }
         expect(response).to have_http_status(:redirect)
-        expect(user.reload.fullname).to eq("New Name")
+      end
+
+      it "updates the user" do
+        put profile_path, params: { user: { fullname: "New Name" } }
+        user.reload
+        expect(user.fullname).to eq("New Name")
       end
     end
   end
