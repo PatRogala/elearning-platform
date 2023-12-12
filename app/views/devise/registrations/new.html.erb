@@ -6,6 +6,11 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mt-5">
+        <%= f.label :fullname, "Enter your fullname", class: "text-[16px]" %>
+        <%= f.text_field :fullname, autofocus: true, placeholder: "John Doe", class: "w-full bg-transparent border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins" %>
+      </div>
+
+      <div class="mt-5">
         <%= f.label :email, "Enter your Email", class: "text-[16px]" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "awesome@email.com", autocomplete: "email", class: "w-full bg-transparent border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins" %>
       </div>

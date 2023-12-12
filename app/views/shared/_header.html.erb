@@ -6,7 +6,7 @@
       </a>
       <div class="flex items-center lg:order-2">
         <% if user_signed_in? %>
-          <a href="<%= edit_user_path(current_user) %>">
+          <a href="<%= profile_path %>">
             <img src="https://avatars.githubusercontent.com/u/51298227?v=4" class="w-8 h-8 rounded-full mr-2">
           </a>
         <% else %>
