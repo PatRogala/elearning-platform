@@ -1,1 +1,23 @@
-TODO: User Profile
+<%= turbo_frame_tag dom_id(current_user) do %>
+  <%= form_for @user do |f| %>
+    <div class="text-center mt-[100px]">
+      <%= f.text_field :fullname, class: "text-2xl text-white font-bold leading-normal mb-1 bg-transparent border rounded h-[40px] px-2 outline-none font-Poppins text-center" %>
+    </div>
+
+    <div class="mt-6 py-6 border-t border-slate-200 text-center">
+      <div class="flex flex-wrap justify-center">
+          <div class="w-full px-4">
+            <%= f.email_field :email, class: "bg-transparent border rounded h-[40px] px-2 outline-none font-Poppins text-center" %>
+          </div>
+      </div>
+    </div>
+
+    <div class="mt-5 flex justify-center">
+      <%= f.submit "Update", class: "py-3 px-6 px-10 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] text-[16px] font-Poppins font-semibold" %>
+    </div>
+  <% end %>
+
+  <div class="mt-5 pb-5 text-center">
+    <%= link_to "Cancel", profile_path, class: "hover:underline" %>
+  </div>
+<% end %>

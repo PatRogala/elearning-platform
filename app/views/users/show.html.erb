@@ -1,1 +1,27 @@
-TODO: User Card
+<div
+  class="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words bg-black w-full shadow-lg rounded-xl my-[250px]">
+  <div class="px-6">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full flex justify-center">
+        <div class="relative">
+          <img
+            src="https://avatars.githubusercontent.com/u/51298227?v=4"
+            class="shadow-xl rounded-full align-middle border-none absolute -mt-16 max-w-[150px] translate-x-[-50%]" />
+        </div>
+      </div>
+    </div>
+    <%= turbo_frame_tag dom_id(current_user) do %>
+      <div class="text-center mt-[100px]">
+        <h3 class="text-2xl text-white font-bold leading-normal mb-1"><%= current_user.fullname %></h3>
+      </div>
+      <div class="mt-6 py-6 border-t border-slate-200 text-center">
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full px-4">
+              <p class="font-light leading-relaxed text-slate-100 mb-4"><%= current_user.email %></p>
+              <%= link_to 'Edit profile', edit_profile_path, class: "font-normal text-gray-300 hover:text-white hover:underline" %>
+            </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
