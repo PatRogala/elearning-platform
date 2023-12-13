@@ -46,7 +46,7 @@ RSpec.describe "Users" do
     describe "path /profile" do
       it "returns http redirect" do
         put profile_path, params: { user: { fullname: "New Name" } }
-        expect(response).to have_http_status(:redirect)
+        expect(response).to have_http_status(:success)
       end
 
       it "updates the user" do

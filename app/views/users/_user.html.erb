@@ -1,0 +1,13 @@
+<%= turbo_frame_tag dom_id(user) do %>
+  <div class="text-center mt-[100px]">
+    <h3 class="text-2xl text-white font-bold leading-normal mb-1"><%= user.fullname %></h3>
+  </div>
+  <div class="mt-6 py-6 border-t border-slate-200 text-center">
+    <div class="flex flex-wrap justify-center">
+        <div class="w-full px-4">
+          <p class="font-light leading-relaxed text-slate-100 mb-4"><%= user.email %></p>
+          <%= link_to 'Edit profile', edit_profile_path, class: "font-normal text-gray-300 hover:text-white hover:underline" %>
+        </div>
+    </div>
+  </div>
+<% end %>

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path
+      render(@user)
     else
       render :edit
     end
