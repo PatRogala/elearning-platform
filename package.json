@@ -23,6 +23,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
+    "daisyui": "^4.4.20",
     "tsc-watch": "^6.0.4",
     "typescript": "^5.3.3"
   }
