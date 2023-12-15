@@ -19,23 +19,22 @@ Welcome to our open-source eLearning platform—a collaborative space for creati
 [![Nodejs][Nodejs]][Nodejs-url]
 [![Typescript][Typescript]][Typescript-url]
 [![Tailwind][Tailwind]][Tailwind-url]
+[![Daisy][Daisy]][Daisy-url]
 [![Docker][Docker]][Docker-url]
 
 ## Setup
 
 1. Pull down the app from version control
-2. Install tool versions `asdf install`
-3. `bundle install`
-4. `bin/setup`
-5. `rails db:seed`
+2. `docker-compose up`
+3. `docker-compose run --rm web bin/setup`
 
 ## Running The App
 
-1. `bin/dev`
+1. `docker-compose up`
 
 ## Tests and CI
 
-1. `bin/ci`
+1. `docker-compose run --rm web bin/ci`
 
 ## Production
 
@@ -70,3 +69,5 @@ in the UNIX environment
 [Docker-url]: https://www.docker.com
 [Hotwire]: https://img.shields.io/badge/Turbo-5CD8E5?style=for-the-badge&logo=Turbo&logoColor=black
 [Hotwire-url]: https://turbo.hotwire.dev/
+[Daisy]: https://img.shields.io/badge/DaisyUI-5A0EF8?style=for-the-badge&logo=DaisyUI&logoColor=white
+[Daisy-url]: https://daisyui.com

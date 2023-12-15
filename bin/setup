@@ -25,6 +25,9 @@ def setup
   # we actually reset the test database
   system!({ "RAILS_ENV" => "test" }, "bin/rails db:reset")
 
+  log "Seeding the development database"
+  system! "bin/rails db:seed"
+
   log "All set up."
   log ""
   log "To see commonly-needed commands, run:"
