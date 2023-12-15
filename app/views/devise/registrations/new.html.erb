@@ -6,6 +6,7 @@
     </div>
     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-[#000000ac]">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "card-body" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
         <div class="form-control">
           <%= f.label :fullname, "Enter your fullname", class: "label label-text" %>
         <%= f.text_field :fullname, autofocus: true, placeholder: "John J Doe", class: "nput input-bordered bg-transparent" %>
