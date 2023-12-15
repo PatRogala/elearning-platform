@@ -19,6 +19,7 @@ Welcome to our open-source eLearning platform—a collaborative space for creati
 [![Nodejs][Nodejs]][Nodejs-url]
 [![Typescript][Typescript]][Typescript-url]
 [![Tailwind][Tailwind]][Tailwind-url]
+[![Daisy][Daisy]][Daisy-url]
 [![Docker][Docker]][Docker-url]
 
 ## Setup
@@ -68,3 +69,5 @@ in the UNIX environment
 [Docker-url]: https://www.docker.com
 [Hotwire]: https://img.shields.io/badge/Turbo-5CD8E5?style=for-the-badge&logo=Turbo&logoColor=black
 [Hotwire-url]: https://turbo.hotwire.dev/
+[Daisy]: https://img.shields.io/badge/DaisyUI-5A0EF8?style=for-the-badge&logo=DaisyUI&logoColor=white
+[Daisy-url]: https://daisyui.com
