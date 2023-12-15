@@ -1,44 +1,19 @@
-<footer>
-  <div class="mx-auto w-full max-w-screen-xl">
-    <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3">
-      <div>
-        <h2 class="mb-6 text-sm font-semibold uppercasetext-white">Creator</h2>
-        <ul class="text-gray-400 font-medium">
-          <li class="mb-4">
-            <a href="<%= ENV['BLOG_URL'] %>" target="_blank" class="hover:underline">Blog</a>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="mb-6 text-sm font-semibol uppercase text-white">Quick Links</h2>
-        <ul class="text-gray-400 font-medium">
-          <li class="mb-4">
-            <%= link_to "FAQ", faq_path, class: "hover:underline" %>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="mb-6 text-sm font-semibold uppercase text-white">Social Links</h2>
-        <ul class="text-gray-400 font-medium">
-          <li class="mb-4">
-            <a href="<%= ENV['GITHUB_URL'] %>" class="hover:underline">Github</a>
-          </li>
-          <li class="mb-4">
-            <a href="<%= ENV['LINKEDIN_URL'] %>" class="hover:underline">Linkedin</a>
-          </li>
-          <li class="mb-4">
-            <a href="<%= ENV['YOUTUBE_URL'] %>" class="hover:underline">Youtube</a>
-          </li>
-          <li class="mb-4">
-            <a href="<%= ENV['INSTAGRAM_URL'] %>" class="hover:underline">Instagram</a>
-          </li>
-        </ul>
-      </div>
+<footer class="footer p-10 text-base-content">
+  <nav>
+    <header class="footer-title">Services</header>
+    <%= link_to "FAQ", faq_path, class: "link link-hover" %>
+  </nav>
+  <nav>
+    <header class="footer-title">Creator</header>
+    <a target="_blank" class="link link-hover" href="<%= ENV['BLOG_URL'] %>">Blog</a>
+  </nav>
+  <nav>
+    <header class="footer-title">Social</header>
+    <div class="grid grid-flow-col gap-4">
+      <a target="_blank" href="<%= ENV['GITHUB_URL'] %>" class="link link-hover">Github</a>
+      <a target="_blank" href="<%= ENV['LINKEDIN_URL'] %>" class="link link-hover">Linkedin</a>
+      <a target="_blank" href="<%= ENV['YOUTUBE_URL'] %>" class="link link-hover">Youtube</a>
+      <a target="_blank" href="<%= ENV['INSTAGRAM_URL'] %>" class="link link-hover">Instagram</a>
     </div>
-    <div class="px-4 py-6 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-300 sm:text-center">© 2023 <a href="#"><%= company_name %></a>. All Rights
-        Reserved.
-      </span>
-    </div>
-  </div>
+  </nav>
 </footer>
