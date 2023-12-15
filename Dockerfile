@@ -22,5 +22,7 @@ EXPOSE 3000
 
 ENV RAILS_ENV=development
 
+RUN bin/setup
+
 ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["bin/dev"]
