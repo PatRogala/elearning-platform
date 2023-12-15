@@ -12,10 +12,6 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
-.hero_animation {
-  background-image: linear-gradient(147.92deg, hsla(239, 76%, 53%, 0.456) 10.41%, hsla(0, 0%, 100%, 0) 89.25%);
-  animation: changeBackgroundColor 8s infinite alternate;
-}
 
 @keyframes changeBackgroundColor {
   0%, 100% {
@@ -43,7 +39,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color:transparent
+  text-fill-color:transparent;
 }
 
 .alert-alert {
