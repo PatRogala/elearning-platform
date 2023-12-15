@@ -1,30 +1,20 @@
-<section class="w-[95%] m-auto flex justify-center items-center h-[90vh]">
-  <div class="w-full flex justify-center items-center flex-col">
-    <h2 class="text-[25px] font-[500] font-Poppins text-center py-2 mb-2">Login to get started</h2>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div>
-        <%= f.label :email, "Enter your Email", class: "text-[16px]" %>
-        <%= f.email_field :email, autofocus: true, placeholder: "awesome@email.com", autocomplete: "email", class: "w-full bg-transparent border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins" %>
-      </div>
-
-      <div class="mt-5">
-        <%= f.label :password %>
-        <%= f.password_field :password, placeholder: "*********", autocomplete: "current-password", class: "w-full bg-transparent border rounded h-[40px] px-2 outline-none mt-[10px] font-Poppins" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="mt-5">
-          <%= f.check_box :remember_me, checked: true %>
-          <%= f.label :remember_me %>
+<section class="hero min-h-screen mx-auto">
+  <div class="hero-content flex-col lg:flex-row-reverse w-full max-w-md">
+    <div class="card shrink-0 w-full shadow-2xl bg-[#000000ac]">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "card-body" }) do |f| %>
+        <div class="form-control">
+          <%= f.label :email, "Enter your Email", class: "label label-text" %>
+          <%= f.email_field :email, autofocus: true, required: true, placeholder: "awesome@email.com", autocomplete: "email", class: "input input-bordered bg-transparent" %>
+        </div>
+        <div class="form-control">
+          <%= f.label :password, class: "label label-text" %>
+          <%= f.password_field :password, placeholder: "*********", autocomplete: "current-password", class: "input input-bordered bg-transparent" %>
+        </div>
+        <%= render "devise/shared/links" %>
+        <div class="form-control mt-6">
+          <button class="btn bg-[#2190ff] text-white">Login</button>
         </div>
       <% end %>
-
-      <div class="mt-5">
-        <%= f.submit "Log in", class: "py-3 px-6 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold" %>
-      </div>
-    <% end %>
-
-    <%= render "devise/shared/links" %>
+    </div>
   </div>
 </section>
