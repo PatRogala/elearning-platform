@@ -15,7 +15,9 @@
 
   <body class="--font-Josefin --font-Poppin bg-gradient-to-b bg-no-repeat from-gray-900 to-black">
     <%= render "shared/header" %>
-    <%= render "shared/flash", flash: flash %>
+    <div id="flash">
+      <%= render "shared/flash", flash: flash %>
+    </div>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>

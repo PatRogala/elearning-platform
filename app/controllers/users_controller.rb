@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      render(@user)
+      respond_to { |format| format.turbo_stream }
     else
       render :edit
     end

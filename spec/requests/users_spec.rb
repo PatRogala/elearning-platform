@@ -52,7 +52,7 @@ RSpec.describe "Users" do
 
     describe "PUT /profile" do
       it "returns http redirect" do
-        put profile_path, params: { user: { fullname: "New Name" } }
+        put profile_path, params: { user: { fullname: "New Name" }, format: :turbo_stream }
         expect(response).to have_http_status(:success)
       end
 

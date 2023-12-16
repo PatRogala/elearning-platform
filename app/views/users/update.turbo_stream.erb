@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "flash",
+  partial: "shared/flash",
+  locals: { flash: { notice: "Profile updated successfully!" } }
+%>
+<%= turbo_stream.replace dom_id(current_user), partial: "users/user", locals: { user: @user } %>
