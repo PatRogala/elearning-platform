@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# rails-controller-testing provides ActionController::TestCase-like methods for ActionDispatch::IntegrationTest
+gem 'rails-controller-testing'
+
 # simplecov is a code coverage analysis tool for Ruby
 gem "simplecov", require: false, group: :test
 
