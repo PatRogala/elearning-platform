@@ -42,6 +42,13 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bundle exec rspec
+      - name: SimpleCov+ Action
+        uses: joshmfrankel/simplecov-check-action@1.0.0
+        with:
+          minimum_suite_coverage: 100
+          minimum_file_coverage: 100
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
 
   lint:
     runs-on: ubuntu-latest
