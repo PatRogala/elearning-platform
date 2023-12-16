@@ -43,3 +43,6 @@
 # secrets we need for dev and test, so
 # we really don't want to commit them
 .env.*.local
+
+# Ignore coverage reports
+/coverage
