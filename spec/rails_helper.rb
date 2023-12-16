@@ -76,4 +76,4 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-Rails.application.routes.default_url_options[:host] = '127.0.0.1'
+Rails.application.routes.default_url_options[:host] = "127.0.0.1"
