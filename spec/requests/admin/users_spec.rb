@@ -1,6 +1,6 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe "Admin::Users", type: :request do
+RSpec.describe "Admin::Users" do
   describe "GET /index" do
     pending "add some examples (or delete) #{__FILE__}"
   end
