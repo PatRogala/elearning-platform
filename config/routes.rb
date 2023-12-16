@@ -11,9 +11,15 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :users, only: [:update]
 
+  # Admin routes
+  namespace :admin do
+    resources :users, only: [:index]
+  end
+
   # Custom routes
   get "/faq", to: "home#faq", as: :faq
   get "/profile", to: "users#show", as: :profile
   get "/profile/edit", to: "users#edit", as: :edit_profile
   put "/profile", to: "users#update"
+  get "/admin", to: "admin/users#index", as: :admin
 end

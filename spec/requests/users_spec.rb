@@ -24,6 +24,13 @@ RSpec.describe "Users" do
         expect(response).to have_http_status(:redirect)
       end
     end
+
+    describe "GET /users/sign_up" do
+      it "returns http success" do
+        get new_user_registration_path
+        expect(response).to have_http_status(:success)
+      end
+    end
   end
 
   describe "authenticated user" do
@@ -43,7 +50,7 @@ RSpec.describe "Users" do
       end
     end
 
-    describe "path /profile" do
+    describe "PUT /profile" do
       it "returns http redirect" do
         put profile_path, params: { user: { fullname: "New Name" } }
         expect(response).to have_http_status(:success)
@@ -53,6 +60,11 @@ RSpec.describe "Users" do
         put profile_path, params: { user: { fullname: "New Name" } }
         user.reload
         expect(user.fullname).to eq("New Name")
+      end
+
+      it "renders the edit template if the user is invalid" do
+        put profile_path, params: { user: { fullname: nil } }
+        expect(response).to render_template(:edit)
       end
     end
   end
