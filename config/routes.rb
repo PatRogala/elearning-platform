@@ -21,5 +21,5 @@ Rails.application.routes.draw do
   get "/profile", to: "users#show", as: :profile
   get "/profile/edit", to: "users#edit", as: :edit_profile
   put "/profile", to: "users#update"
-  get "/admin", to: "admin/users#index", as: :admin
+  get "/admin", to: "admin/panel#index", as: :admin
 end
