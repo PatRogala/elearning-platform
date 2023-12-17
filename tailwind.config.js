@@ -27,6 +27,13 @@ module.exports = {
         "400px": "400px",
       }
     },
+    colors: {
+      'text': 'rgb(240, 240, 240)',
+      'background': 'rgb(0, 0, 0)',
+      'primary': 'rgb(169, 234, 196)',
+      'secondary': 'rgb(27, 39, 32)',
+      'accent': 'rgb(255, 61, 64)',
+    },
   },
   plugins: [
     require('@tailwindcss/forms'),

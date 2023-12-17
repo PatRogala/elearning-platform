@@ -2,40 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-}
-
-
-@keyframes changeBackgroundColor {
-  0%, 100% {
-    opacity: 1;
-  }
-  16.67% {
-    opacity: 0.9;
-  }
-  33.33% {
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 0.6;
-  }
-  66.67% {
-    opacity: 0.5;
-  }
-  83.33% {
-    opacity: 0.4;
-  }
-}
-
 .text-gradient {
-  background: linear-gradient(90deg, #4d88c4 2.34%, #964be1 100.78%);
+  background: linear-gradient(90deg, #A9EAC4 2.34%, #FF3D40 100.78%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
