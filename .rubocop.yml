@@ -186,3 +186,8 @@ Rails/Delegate:
 
 Bundler/OrderedGems:
   Enabled: false
+
+# RSpec Cops
+RSpec/NestedGroups:
+  Description: 'Avoid nested groups.'
+  Enabled: false
