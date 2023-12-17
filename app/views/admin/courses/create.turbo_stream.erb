@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "flash",
+  partial: "shared/flash",
+  locals: { flash: { notice: "Course created successfully!" } }
+%>
+
+<%= turbo_stream.replace "new_course", partial: "admin/courses/form" %>
+
+<%= turbo_stream.prepend "courses",
+  partial: "admin/courses/course",
+  locals: { course: @course }
+%>

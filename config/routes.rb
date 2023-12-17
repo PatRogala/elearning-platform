@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # Admin routes
   namespace :admin do
     resources :users, only: [:index]
-    resources :courses, only: [:index]
+    resources :courses, only: [:index, :new, :create]
   end
 
   # Custom routes
