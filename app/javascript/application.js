@@ -2,3 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./utils/mobileMenu"
+import "./utils/adminCourseImagePreview"

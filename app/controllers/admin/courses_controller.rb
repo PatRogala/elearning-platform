@@ -18,9 +18,9 @@ class Admin::CoursesController < Admin::ApplicationController
   end
 
   def create
-    course = Course.new(course_params)
+    @course = Course.new(course_params)
 
-    if course.update(course_params)
+    if @course.save
       respond_to { |format| format.turbo_stream }
     else
       render :new
@@ -30,6 +30,6 @@ class Admin::CoursesController < Admin::ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :description)
+    params.require(:course).permit(:name, :description, :image)
   end
 end
