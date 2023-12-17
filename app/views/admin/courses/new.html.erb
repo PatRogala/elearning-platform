@@ -1,0 +1,26 @@
+<turbo-frame id="new_course">
+  <div class="border border-warning rounded-md p-10">
+    <div class="card shrink-0 w-full shadow-2xl bg-[#000000ac]">
+      <%= form_for(@course, url: admin_courses_path, html: { class: "card-body" }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: @course %>
+        <div class="form-control">
+          <img id="img_prev" src="#" alt="your image" class="hidden"/>
+          <%= f.label :image, "Upload course image", class: "label label-text" %>
+          <%= f.file_field :image, class: "file-input file-input-bordered file-input-md w-full max-w-xs", id: "course_admin_preview_input" %>
+        </div>
+        <div class="form-control">
+          <%= f.label :name, "Enter course name", class: "label label-text" %>
+          <%= f.text_field :name, autofocus: true, required: true, placeholder: "Rails 101", class: "input input-bordered bg-transparent" %>
+        </div>
+        <div class="form-control">
+          <%= f.label :description, class: "label label-text" %>
+          <%= f.text_area :description, placeholder: "Learn Ruby on Rails", class: "input input-bordered bg-transparent" %>
+        </div>
+        <div class="form-control mt-6">
+          <%= f.submit "Create new course", class: "btn bg-[#2190ff] text-white" %>
+        </div>
+      <% end %>
+    </div>
+    <%= link_to 'Cancel', admin_courses_path, class: 'btn btn-warning btn-wide' %>
+  <div>
+</turbo-frame>

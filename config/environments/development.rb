@@ -78,4 +78,7 @@ Rails.application.configure do
   # Capybara server host needed for tests
   config.hosts << "www.example.com"
   config.hosts << /.*\.example\.com/
+
+  # Store files locally.
+  config.active_storage.service = :local
 end
