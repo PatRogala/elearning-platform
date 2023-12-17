@@ -8,16 +8,6 @@ class Admin::CoursesController < Admin::ApplicationController
   end
 
   def create
-    course = Course.new(course_params)
-
-    if course.save
-      redirect_to admin_courses_path, notice: "Course created successfully!"
-    else
-      render :new
-    end
-  end
-
-  def create
     @course = Course.new(course_params)
 
     if @course.save
