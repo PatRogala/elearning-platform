@@ -1,4 +1,4 @@
-document.addEventListener('turbo:load', () => {
+document.addEventListener('turbo:frame-load', () => {
   const previewImg = document.getElementById('img_prev') as HTMLImageElement;
   const input = document.getElementById('course_admin_preview_input') as HTMLInputElement;
 
@@ -15,7 +15,7 @@ const readURL = (input: HTMLInputElement, previewImg: HTMLImageElement) => {
 
     reader.onload = function (e) {
       previewImg.src = e.target.result as string;
-      previewImg.classList.add('w-32', 'h-32', 'object-cover', 'rounded-full');
+      previewImg.classList.add('w-full', 'object-cover');
       previewImg.classList.remove('hidden');
     }
 
