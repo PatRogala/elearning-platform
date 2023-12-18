@@ -1,19 +1,19 @@
-<footer class="footer p-10 text-base-content">
+<footer class="footer p-10 text-text">
   <nav>
     <header class="footer-title">Services</header>
-    <%= link_to "FAQ", faq_path, class: "link link-hover" %>
+    <%= link_to "FAQ", faq_path, class: "text-[16px] hover:opacity-80" %>
   </nav>
   <nav>
     <header class="footer-title">Creator</header>
-    <a target="_blank" class="link link-hover" href="<%= ENV['BLOG_URL'] %>">Blog</a>
+    <a target="_blank" class="text-[16px] hover:opacity-80" href="<%= ENV['BLOG_URL'] %>">Blog</a>
   </nav>
   <nav>
     <header class="footer-title">Social</header>
-    <div class="grid grid-flow-col gap-4">
-      <a target="_blank" href="<%= ENV['GITHUB_URL'] %>" class="link link-hover">Github</a>
-      <a target="_blank" href="<%= ENV['LINKEDIN_URL'] %>" class="link link-hover">Linkedin</a>
-      <a target="_blank" href="<%= ENV['YOUTUBE_URL'] %>" class="link link-hover">Youtube</a>
-      <a target="_blank" href="<%= ENV['INSTAGRAM_URL'] %>" class="link link-hover">Instagram</a>
+    <div class="grid grid-flow-col gap-4 text-[16px]">
+      <a target="_blank" href="<%= ENV['GITHUB_URL'] %>" class="hover:opacity-80">Github</a>
+      <a target="_blank" href="<%= ENV['LINKEDIN_URL'] %>" class="hover:opacity-80">Linkedin</a>
+      <a target="_blank" href="<%= ENV['YOUTUBE_URL'] %>" class="hover:opacity-80">Youtube</a>
+      <a target="_blank" href="<%= ENV['INSTAGRAM_URL'] %>" class="hover:opacity-80">Instagram</a>
     </div>
   </nav>
 </footer>

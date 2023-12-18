@@ -1,9 +1,9 @@
 <div class="min-h-screen w-[95%] mx-auto">
-  <h1 class="text-3xl font-bold mt-10 text-center">Welcome, <%= current_user.fullname %></h1>
-  <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 lg:grid-cols-5">
+  <h1 class="text-3xl font-bold mt-10 text-center text-text">Welcome, <%= current_user.fullname %></h1>
+  <div class="grid grid-cols-2 gap-4 mt-4 md:grid-cols-3 lg:grid-cols-3 w-[90%] lg:max-w-lg mx-auto">
     <% panels.each do |panel| %>
       <div class="col-span-1">
-        <a href="<%= panel[:path] %>" class="btn w-full btn-primary">
+        <a href="<%= panel[:path] %>" class="btn w-full bg-primary text-background">
           <p class="text-center font-bold text-[20px]"><%= panel[:title] %></p>
         </a>
       </div>

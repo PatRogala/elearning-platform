@@ -12,11 +12,12 @@
 
 <% if current_user&.admin? %>
   <li>
-    <%= link_to "Admin", admin_path, class: "px-1 block py-2 pr-4 pl-3 border-b lg:border-0 lg:hover:text-primary-700 lg:p-0 text-gray-400 hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700" %>
+    <%= link_to "Admin", admin_path, class: "px-1 block py-2 pr-4 pl-3 lg:p-0 text-text border-gray-700 hover:opacity-75 transition-all text-[20px]" %>
   </li
 <% end %>
+
 <% nav_items.each do |item| %>
   <li>
-    <a href="<%= item[:path] %>" class="px-1 block py-2 pr-4 pl-3 border-b lg:border-0 lg:hover:text-primary-700 lg:p-0 text-gray-400 hover:bg-gray-700 hover:text-white lg:hover:bg-transparent border-gray-700"><%= item[:name] %></a>
+    <a href="<%= item[:path] %>" class="px-1 block py-2 pr-4 pl-3 lg:p-0 text-text border-gray-700 hover:opacity-75 transition-all text-[20px]"><%= item[:name] %></a>
   </li>
 <% end %>
