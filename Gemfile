@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# humanize is a Ruby library for creating human-readable representations of numbers
+gem "humanize"
+
 # rails-controller-testing provides ActionController::TestCase-like methods for ActionDispatch::IntegrationTest
 gem "rails-controller-testing"
 

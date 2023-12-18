@@ -123,6 +123,7 @@ GEM
     ffi (1.16.3)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    humanize (2.5.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
@@ -343,6 +344,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   faker
+  humanize
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
