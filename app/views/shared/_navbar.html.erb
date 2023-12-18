@@ -1,9 +1,5 @@
 <% nav_items = [
   {
-    name: "Home",
-    path: root_path
-  },
-  {
     name: "FAQ",
     path: faq_path
   }
@@ -11,13 +7,9 @@
 %>
 
 <% if current_user&.admin? %>
-  <li>
-    <%= link_to "Admin", admin_path, class: "px-1 block py-2 pr-4 pl-3 lg:p-0 text-text border-gray-700 hover:opacity-75 transition-all text-[20px]" %>
-  </li
+  <%= link_to "Admin", admin_path, class: "font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500" %>
 <% end %>
 
 <% nav_items.each do |item| %>
-  <li>
-    <a href="<%= item[:path] %>" class="px-1 block py-2 pr-4 pl-3 lg:p-0 text-text border-gray-700 hover:opacity-75 transition-all text-[20px]"><%= item[:name] %></a>
-  </li>
+  <a href="<%= item[:path] %>" class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"><%= item[:name] %></a>
 <% end %>
