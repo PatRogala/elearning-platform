@@ -1,6 +1,5 @@
 <div class="min-h-screen w-[95%] mx-auto">
-  <h1 class="text-3xl font-bold mt-10 text-center">Welcome, <%= current_user.fullname %></h1>
-  <h2 class="text-2xl font-bold mt-10 text-center">Our Courses</h2>
+  <h1 class="text-text text-2xl font-bold mt-10 text-center">Admin Courses Panel</h1>
   <div class="w-full lg:w-[60%] mx-auto mt-10">
     <%= render "admin/courses/form", course: @course %>
     <div id="courses" class="grid grid-cols-2 gap-4 mt-10 lg:grid-cols-3">

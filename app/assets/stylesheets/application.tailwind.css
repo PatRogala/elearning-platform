@@ -25,3 +25,7 @@
   --alert-bg: var(--fallback-in,oklch(var(--in)/1));
   --alert-bg-mix: var(--fallback-b1,oklch(var(--b1)/1));
 }
+
+input[pseudo="file-selector-button"] {
+  @apply text-text bg-primary;
+}
