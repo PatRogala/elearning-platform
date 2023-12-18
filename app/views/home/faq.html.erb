@@ -1,8 +1,18 @@
-<section class="mt-[150px]">
-  <div class="py-8 px-4 mx-auto max-w-[90%] 800px:max-w-[80%]  sm:py-16 lg:px-6">
-    <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-white">Frequently asked questions</h2>
-    <div class="grid pt-8 text-left border-t md:gap-16 border-gray-700 md:grid-cols-2">
+<!-- FAQ -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Title -->
+  <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+    <h2 class="text-2xl text-text-dark font-bold md:text-4xl md:leading-tight dark:text-text">Your questions, answered</h2>
+    <p class="mt-1 text-gray-600 dark:text-gray-400">Answers to the most frequently asked questions.</p>
+  </div>
+  <!-- End Title -->
+
+  <div class="max-w-2xl mx-auto">
+    <!-- Accordion -->
+    <div class="hs-accordion-group">
       <%= render @faq_items %>
     </div>
+    <!-- End Accordion -->
   </div>
-</section>
+</div>
+<!-- End FAQ -->
