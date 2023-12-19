@@ -1,6 +1,13 @@
 // Entry point for the build script in your package.json
 import "@hotwired/turbo-rails"
-import "preline/dist/preline.js"
+import "preline/preline.js"
 import "./controllers"
-import "./utils/mobileMenu"
 import "./utils/adminCourseImagePreview"
+import "./utils/themeSwitcher"
+
+
+// Add turbo:load event listener to reinitialize
+// HSStaticMethods from Preline
+document.addEventListener("turbo:load", () => {
+  HSStaticMethods.autoInit();
+})
