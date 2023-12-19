@@ -15,9 +15,7 @@
 
   <body class="font-Poppins bg-background-dark dark:bg-background">
     <%= render "shared/header" %>
-    <div id="flash">
-      <%= render "shared/flash", flash: flash %>
-    </div>
+    <%= render "shared/flash", flash: flash %>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>

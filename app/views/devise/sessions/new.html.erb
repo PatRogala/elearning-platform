@@ -1,20 +1,63 @@
-<section class="hero min-h-screen mx-auto">
-  <div class="hero-content flex-col lg:flex-row-reverse w-full max-w-md">
-    <div class="card shrink-0 w-full shadow-2xl bg-[#000000ac]">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "card-body" }) do |f| %>
-        <div class="form-control">
-          <%= f.label :email, "Enter your Email", class: "label label-text" %>
-          <%= f.email_field :email, autofocus: true, required: true, placeholder: "awesome@email.com", autocomplete: "email", class: "input input-bordered bg-transparent" %>
+<turbo-frame id="main">
+  <main class="w-full max-w-md mx-auto p-6">
+    <div class="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-4 sm:p-7">
+        <div class="text-center">
+          <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
+          <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+            Don't have an account yet?
+            <%= link_to "Sign up here", new_user_registration_path, class: "text-primary-dark dark:text-primary decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" %>
+          </p>
         </div>
-        <div class="form-control">
-          <%= f.label :password, class: "label label-text" %>
-          <%= f.password_field :password, placeholder: "*********", autocomplete: "current-password", class: "input input-bordered bg-transparent" %>
+
+        <div class="mt-5">
+          <!-- Form -->
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="grid gap-y-4">
+              <% flash.each do |key, value| %>
+                <div class="text-accent-dark dark:text-accent">
+                  <%= value %>
+                </div>
+              <% end %>
+              <!-- Form Group -->
+              <div>
+                <%= f.label :email, "Email address", class: "block text-sm mb-2 dark:text-white" %>
+                <div class="relative">
+                  <%= f.email_field :email, autofocus: true, required: true, placeholder: "awesome@email.com", autocomplete: "email", class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" %>
+                  <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                    <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                  </div>
+                </div>
+                <p class="hidden text-xs text-red-600 mt-2" id="email-error">Please include a valid email address so we can get back to you</p>
+              </div>
+              <!-- End Form Group -->
+
+              <!-- Form Group -->
+              <div>
+                <div class="flex justify-between items-center">
+                  <%= f.label :password, class: "block text-sm mb-2 dark:text-white" %>
+                  <%= link_to "Forgot password?", new_user_password_path, class: "text-sm text-primary-dark dark:text-primary decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" %>
+                </div>
+                <div class="relative">
+                  <%= f.password_field :password, placeholder: "*********", autocomplete: "current-password", class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" %>
+                  <div class="hidden absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+                    <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                    </svg>
+                  </div>
+                </div>
+                <p class="hidden text-xs text-red-600 mt-2" id="password-error">8+ characters required</p>
+              </div>
+              <!-- End Form Group -->
+
+              <%= f.submit "Sign in", class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary-dark text-text dark:bg-primary dark:text-text-dark hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" %>
+            </div>
+          <% end %>
+          <!-- End Form -->
         </div>
-        <%= render "devise/shared/links" %>
-        <div class="form-control mt-6">
-          <%= f.submit "Log in", class: "btn bg-[#2190ff] text-white" %>
-        </div>
-      <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </main>
+</turbo-frame>
