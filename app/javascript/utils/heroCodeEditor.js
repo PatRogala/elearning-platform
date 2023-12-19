@@ -17,10 +17,18 @@ const initHeroCodeEditor = () => {
   const editor_div = document.getElementById('code-hero')
 
   if (editor_div) {
-    const editor = ace.edit("code-hero", { mode: "ace/mode/ruby", selectionStyle: "text" });
+    const editor = ace.edit("code-hero");
+    editor.setOptions({
+      mode: "ace/mode/ruby",
+      selectionStyle: "text",
+      keyboardHandler: "ace/keyboard/vscode",
+      fontSize: "14px",
+      tabSize: 2,
+      showPrintMargin: false,
+    });
 
     if (document.documentElement.classList.contains('dark')) {
-      editor.setTheme("ace/theme/one_dark");
+      editor.setTheme("ace/theme/tomorrow_night_bright");
     } else {
       editor.setTheme("ace/theme/chrome");
     }
