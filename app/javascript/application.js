@@ -4,6 +4,7 @@ import "preline/preline.js"
 import "./controllers"
 import "./utils/adminCourseImagePreview"
 import "./utils/themeSwitcher"
+import "./utils/heroCodeEditor"
 
 
 // Add turbo:load event listener to reinitialize
