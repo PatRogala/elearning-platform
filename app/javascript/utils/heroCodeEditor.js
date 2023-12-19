@@ -34,39 +34,38 @@ const initHeroCodeEditor = () => {
     }
 
     editor.setValue(`RSpec.describe "Users" do
-    subject(:user) { create(:user) }
+  subject(:user) { create(:user) }
 
-    describe "unauthenticated user" do
-      describe "GET /profile" do
-        it "returns http redirect" do
-          get profile_path
-          expect(response).to have_http_status(:redirect)
-        end
+  describe "unauthenticated user" do
+    describe "GET /profile" do
+      it "returns http redirect" do
+        get profile_path
+        expect(response).to have_http_status(:redirect)
       end
+    end
 
-      describe "GET /profile/edit" do
-        it "returns http redirect" do
-          get edit_profile_path
-          expect(response).to have_http_status(:redirect)
-        end
+    describe "GET /profile/edit" do
+      it "returns http redirect" do
+        get edit_profile_path
+        expect(response).to have_http_status(:redirect)
       end
+    end
 
-      describe "PUT /profile" do
-        it "returns http redirect" do
-          put profile_path, params: { user: { fullname: "New Name" } }
-          expect(response).to have_http_status(:redirect)
-        end
+    describe "PUT /profile" do
+      it "returns http redirect" do
+        put profile_path, params: { user: { fullname: "New Name" } }
+        expect(response).to have_http_status(:redirect)
       end
+    end
 
-      describe "GET /users/sign_up" do
-        it "returns http success" do
-          get new_user_registration_path
-          expect(response).to have_http_status(:success)
-        end
+    describe "GET /users/sign_up" do
+      it "returns http success" do
+        get new_user_registration_path
+        expect(response).to have_http_status(:success)
       end
     end
   end
-
+end
     `)
 
     // Don't select the text
