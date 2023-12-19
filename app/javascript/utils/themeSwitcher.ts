@@ -68,7 +68,7 @@ window.addEventListener('load', () => {
     $item.addEventListener('click', () => HSThemeAppearance.setAppearance($item.getAttribute('data-hs-theme-click-value'), true, $item))
   })
 
-  $switchableThemes.forEach($item => {
+  $switchableThemes.forEach(($item: HTMLInputElement) => {
     $item.addEventListener('change', (e) => {
       HSThemeAppearance.setAppearance(e.target.checked ? 'dark' : 'default')
     })
@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
   })
 
   window.addEventListener('on-hs-appearance-change', e => {
-    $switchableThemes.forEach($item => {
+    $switchableThemes.forEach(($item: HTMLInputElement) => {
       $item.checked = e.detail === 'dark'
     })
   })
