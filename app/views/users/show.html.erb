@@ -1,15 +1,17 @@
-<div
-  class="relative max-w-md mx-auto md:max-w-2xl min-w-0 break-words bg-black w-full shadow-lg rounded-xl my-[250px]">
-  <div class="px-6">
-    <div class="flex flex-wrap justify-center">
-      <div class="w-full flex justify-center">
-        <div class="relative">
-          <img
-            src="https://avatars.githubusercontent.com/u/51298227?v=4"
-            class="shadow-xl rounded-full align-middle border-none absolute -mt-16 max-w-[150px] translate-x-[-50%]" />
-        </div>
-      </div>
+<div class="grid gap-10 w-[90%] max-w-3xl mx-auto mt-32 grid-cols-1 sm:grid-cols-3 grid-flow-row-dense text-text-dark dark:text-text">
+  <!-- User navbar -->
+  <div class="bg-background dark:bg-background-dark bg-opacity-10 dark:bg-opacity-10 rounded-md p-10 h-fit">
+    <div class="flex items-center justify-center">
+      <%= avatar_or_default_for(current_user, variant: :medium, class_name: "mx-auto h-[5.875rem] w-[5.875rem] rounded-full") %>
     </div>
-    <%= render current_user, user: current_user %>
+    <div class="text-center mt-3">
+      <h2 class="font-bold text-lg"><%= current_user.fullname %></h2>
+      <p class="text-sm font-thin"><%= current_user.email %></p>
+    </div>
+  </div>
+
+  <!-- User info -->
+  <div class="col-span-1 sm:col-span-2 bg-background dark:bg-background-dark bg-opacity-10 dark:bg-opacity-10 rounded-md p-10 h-fit">
+    Info
   </div>
 </div>
