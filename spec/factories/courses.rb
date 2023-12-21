@@ -9,7 +9,7 @@ FactoryBot.define do
 
     trait :with_image do
       after(:build) do |course|
-        course.image.attach(io: Rails.root.join("spec/factories/images/course.png").open, filename: "course.png",
+        course.image.attach(io: Rails.root.join("spec/fixtures/files/course.png").open, filename: "course.png",
                             content_type: "image/png")
       end
     end

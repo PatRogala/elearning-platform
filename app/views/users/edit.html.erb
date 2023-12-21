@@ -1,23 +1,33 @@
-<%= turbo_frame_tag dom_id(current_user) do %>
-  <%= form_for @user do |f| %>
-    <div class="text-center mt-[100px]">
-      <%= f.text_field :fullname, class: "text-2xl text-white font-bold leading-normal mb-1 bg-transparent border rounded h-[40px] px-2 outline-none font-Poppins text-center" %>
+<div class="grid gap-10 w-[90%] max-w-3xl mx-auto mt-32 grid-cols-1 lg:grid-cols-6 grid-flow-row-dense text-text-dark dark:text-text">
+  <!-- User navbar -->
+  <div class="bg-background dark:bg-background-dark bg-opacity-5 dark:bg-opacity-5 rounded-md p-5 h-fit col-span-1 lg:col-span-2">
+    <div class="flex items-center justify-center">
+      <%= avatar_or_default_for(current_user, variant: :medium, class_name: "mx-auto h-[5.875rem] w-[5.875rem] rounded-full") %>
     </div>
-
-    <div class="mt-6 py-6 border-t border-slate-200 text-center">
-      <div class="flex flex-wrap justify-center">
-          <div class="w-full px-4">
-            <%= f.email_field :email, class: "bg-transparent border rounded h-[40px] px-2 outline-none font-Poppins text-center" %>
-          </div>
-      </div>
+    <div class="text-center mt-3">
+      <h2 class="font-bold text-lg"><%= current_user.fullname %></h2>
+      <p class="text-sm font-thin"><%= current_user.email %></p>
     </div>
-
-    <div class="mt-5 flex justify-center">
-      <%= f.submit "Update", class: "py-3 px-6 px-10 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] text-[16px] font-Poppins font-semibold" %>
+    <div>
+      <h2 class="font-bold text-lg mt-8 mb-4">Account</h2>
+      <ul>
+        <li>
+          <a href="<%= edit_profile_path %>" class="flex gap-2 border-accent-dark dark:border-accent text-accent-dark dark:text-accent cursor-pointer border-l-2 pl-1 transition-all items-center">
+            <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.5 21H4C4 17.134 7.13401 14 11 14C11.1681 14 11.3348 14.0059 11.5 14.0176M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7ZM12.5898 21L14.6148 20.595C14.7914 20.5597 14.8797 20.542 14.962 20.5097C15.0351 20.4811 15.1045 20.4439 15.1689 20.399C15.2414 20.3484 15.3051 20.2848 15.4324 20.1574L19.5898 16C20.1421 15.4477 20.1421 14.5523 19.5898 14C19.0376 13.4477 18.1421 13.4477 17.5898 14L13.4324 18.1574C13.3051 18.2848 13.2414 18.3484 13.1908 18.421C13.1459 18.4853 13.1088 18.5548 13.0801 18.6279C13.0478 18.7102 13.0302 18.7985 12.9948 18.975L12.5898 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Personal Info
+          </a>
+        </li>
+      </ul>
     </div>
-  <% end %>
-
-  <div class="mt-5 pb-5 text-center">
-    <%= link_to "Cancel", profile_path, class: "hover:underline" %>
   </div>
-<% end %>
+
+  <!-- User info -->
+  <div class="col-span-1 lg:col-span-4 bg-background dark:bg-background-dark bg-opacity-5 dark:bg-opacity-5 rounded-md p-10 h-fit">
+    <h2 class="font-semibold text-[22px]">Basic Info</h2>
+    <%= turbo_frame_tag dom_id(current_user) do %>
+      <%= render "form", user: current_user %>
+    <% end %>
+  </div>
+</div>

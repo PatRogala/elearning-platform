@@ -3,6 +3,9 @@ en:
     courses:
       create:
         success: "Course was successfully created."
+  users:
+    update:
+      success: "User was successfully updated."
   faq:
     title: "Your questions, answered"
     subtitle: "Answers to the most frequently asked questions."
