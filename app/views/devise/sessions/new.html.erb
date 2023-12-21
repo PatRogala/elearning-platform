@@ -52,7 +52,7 @@
               </div>
               <!-- End Form Group -->
 
-              <%= f.submit "Sign in", class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary-dark text-text dark:bg-primary dark:text-text-dark hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" %>
+              <%= f.submit "Sign in", class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary-dark text-text dark:bg-primary dark:text-text-dark hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600", data: { turbo: false } %>
             </div>
           <% end %>
           <!-- End Form -->

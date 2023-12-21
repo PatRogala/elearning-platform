@@ -13,3 +13,8 @@
 <% nav_items.each do |item| %>
   <a href="<%= item[:path] %>" class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"><%= item[:name] %></a>
 <% end %>
+
+<% if user_signed_in? %>
+  <%= link_to "Profile", profile_path, class: "font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500 md:hidden" %>
+  <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500 md:hidden" %>
+<% end %>
