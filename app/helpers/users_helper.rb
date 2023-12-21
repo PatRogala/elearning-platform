@@ -1,7 +1,7 @@
 module UsersHelper
   def avatar_or_default_for(user, options = { variant: :medium, class_name: "" })
     if user.avatar.attached?
-      image_tag(user.avatar.variant(options),
+      image_tag(user.avatar,
                 class: options[:class_name])
     else
       generate_avatar_placeholder(user, options)

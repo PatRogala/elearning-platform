@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "preline/preline.js"
 import "./controllers"
-import "./utils/adminCourseImagePreview"
+import "./utils/profileUpdateAvatarImagePreview"
 import "./utils/themeSwitcher"
 import "./utils/heroCodeEditor"
 

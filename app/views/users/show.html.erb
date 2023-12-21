@@ -1,6 +1,6 @@
-<div class="grid gap-10 w-[90%] max-w-3xl mx-auto mt-32 grid-cols-1 sm:grid-cols-3 grid-flow-row-dense text-text-dark dark:text-text">
+<div class="grid gap-10 w-[90%] max-w-3xl mx-auto mt-32 grid-cols-1 lg:grid-cols-6 grid-flow-row-dense text-text-dark dark:text-text">
   <!-- User navbar -->
-  <div class="bg-background dark:bg-background-dark bg-opacity-10 dark:bg-opacity-10 rounded-md p-10 h-fit">
+  <div class="bg-background dark:bg-background-dark bg-opacity-5 dark:bg-opacity-5 rounded-md p-5 h-fit col-span-2">
     <div class="flex items-center justify-center">
       <%= avatar_or_default_for(current_user, variant: :medium, class_name: "mx-auto h-[5.875rem] w-[5.875rem] rounded-full") %>
     </div>
@@ -8,10 +8,49 @@
       <h2 class="font-bold text-lg"><%= current_user.fullname %></h2>
       <p class="text-sm font-thin"><%= current_user.email %></p>
     </div>
+    <div>
+      <h2 class="font-bold text-lg mt-8 mb-4">Account</h2>
+      <ul>
+        <li class="flex gap-2 border-accent-dark dark:border-accent hover:text-accent-dark dark:hover:text-accent cursor-pointer hover:border-l-2 pl-1 transition-all">
+          <svg fill="currentColor" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.5 21H4C4 17.134 7.13401 14 11 14C11.1681 14 11.3348 14.0059 11.5 14.0176M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7ZM12.5898 21L14.6148 20.595C14.7914 20.5597 14.8797 20.542 14.962 20.5097C15.0351 20.4811 15.1045 20.4439 15.1689 20.399C15.2414 20.3484 15.3051 20.2848 15.4324 20.1574L19.5898 16C20.1421 15.4477 20.1421 14.5523 19.5898 14C19.0376 13.4477 18.1421 13.4477 17.5898 14L13.4324 18.1574C13.3051 18.2848 13.2414 18.3484 13.1908 18.421C13.1459 18.4853 13.1088 18.5548 13.0801 18.6279C13.0478 18.7102 13.0302 18.7985 12.9948 18.975L12.5898 21Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Personal Info
+        </li>
+      </ul>
+    </div>
   </div>
 
   <!-- User info -->
-  <div class="col-span-1 sm:col-span-2 bg-background dark:bg-background-dark bg-opacity-10 dark:bg-opacity-10 rounded-md p-10 h-fit">
-    Info
+  <div class="col-span-1 lg:col-span-4 bg-background dark:bg-background-dark bg-opacity-5 dark:bg-opacity-5 rounded-md p-10 h-fit">
+    <h2 class="font-semibold text-[22px]">Basic Info</h2>
+    <%= form_for(current_user, url: user_path(current_user), method: :patch, html: { class: "mt-5" }) do |f| %>
+      <div>
+        <%= render "devise/shared/error_messages", resource: current_user %>
+        <div class="mt-5">
+          <%= f.label :avatar, "Avatar", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+          <div class="flex items-center gap-4">
+            <div id="avatar_prev">
+             <%= avatar_or_default_for(current_user, variant: :medium, class_name: "h-[70px] w-[70px]") %>
+            </div>
+            <%= f.file_field :avatar, class: "w-[70%] block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-dark file:text-text file:dark:text-text-dark hover:file:bg-primary-dark file:disabled:opacity-50 file:disabled:pointer-events-none dark:file:bg-primary dark:hover:file:bg-primary", id: "profile_avatar_input" %>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <%= f.label :fullname, "Fullname", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+          <%= f.text_field :fullname, autofocus: true, required: true, placeholder: "John Doe", autocomplete: "fullname", class: "bg-transparent py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" %>
+        </div>
+
+        <div class="mt-5">
+          <%= f.label :email, "Enter your Email", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+          <%= f.email_field :email, autofocus: true, required: true, placeholder: "awesome@email.com", autocomplete: "email", class: "bg-transparent py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" %>
+        </div>
+
+        <div class="mt-5">
+          <%= f.submit "Save Changes", class: "bg-primary-dark text-text dark:text-text-dark py-3 px-4 block w-full rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:focus:ring-gray-600" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
