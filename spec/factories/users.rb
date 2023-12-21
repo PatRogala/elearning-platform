@@ -13,7 +13,9 @@ FactoryBot.define do
     end
 
     trait :with_avatar do
-      avatar { Rack::Test::UploadedFile.new(Rails.root.join("spec/factories/images/avatar.png"), "image/png") }
+      after(:build) do |user|
+        user.avatar.attach(io: File.open(Rails.root.join("spec/factories/images/avatar.png")), filename: "avatar.png", content_type: "image/png")
+      end
     end
   end
 end
