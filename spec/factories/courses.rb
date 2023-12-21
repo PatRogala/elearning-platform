@@ -2,10 +2,16 @@ FactoryBot.define do
   factory :course do
     name { Faker::Educator.course_name }
     description { Faker::Lorem.paragraph }
-    image { Rack::Test::UploadedFile.new(Rails.root.join("spec/factories/images/course.png"), "image/png") }
 
     trait :invalid do
       name { nil }
+    end
+
+    trait :with_image do
+      after(:build) do |course|
+        course.image.attach(io: Rails.root.join("spec/factories/images/course.png").open, filename: "course.png",
+                            content_type: "image/png")
+      end
     end
   end
 end

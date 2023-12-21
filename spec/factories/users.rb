@@ -6,9 +6,17 @@ FactoryBot.define do
     password { "password" }
     fullname { Faker::Name.name }
     admin { false }
+    avatar { nil }
 
     trait :admin do
       admin { true }
+    end
+
+    trait :with_avatar do
+      after(:build) do |user|
+        user.avatar.attach(io: Rails.root.join("spec/factories/images/avatar.png").open, filename: "avatar.png",
+                           content_type: "image/png")
+      end
     end
   end
 end

@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# activestorage-validator validates Active Storage attachments
+gem "activestorage-validator"
+
 # humanize is a Ruby library for creating human-readable representations of numbers
 gem "humanize"
 

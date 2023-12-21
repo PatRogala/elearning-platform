@@ -19,7 +19,7 @@
             after:absolute after:end-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:start-1.5 checked:after:end-auto text-accent" type="checkbox" id="darkSwitch">
           <% if user_signed_in? %>
             <a href="<%= profile_path %>">
-              <img src="https://avatars.githubusercontent.com/u/51298227?v=4" class="w-8 h-8 rounded-full mr-2">
+              <%= avatar_or_default_for(current_user, variant: :thumb, class_name: "w-8 h-8 rounded-full mr-2") %>
             </a>
           <% else %>
             <a class="flex items-center gap-x-2 font-medium text-gray-500 hover:text-accent dark:text-gray-400 dark:hover:text-accent" href="<%= new_user_session_path %>">

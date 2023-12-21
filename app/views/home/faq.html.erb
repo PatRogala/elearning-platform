@@ -3,15 +3,15 @@
   <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <!-- Title -->
     <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
-      <h2 class="text-2xl text-text-dark font-bold md:text-4xl md:leading-tight dark:text-text">Your questions, answered</h2>
-      <p class="mt-1 text-gray-600 dark:text-gray-400">Answers to the most frequently asked questions.</p>
+      <h2 class="text-2xl text-text-dark font-bold md:text-4xl md:leading-tight dark:text-text"><%= t('faq.title') %></h2>
+      <p class="mt-1 text-gray-600 dark:text-gray-400"><%= t('faq.subtitle') %></p>
     </div>
     <!-- End Title -->
 
     <div class="max-w-2xl mx-auto">
       <!-- Accordion -->
       <div class="hs-accordion-group">
-        <%= render @faq_items %>
+        <%= render partial: 'faq_items/faq_item', collection: @faq_items %>
       </div>
       <!-- End Accordion -->
     </div>
