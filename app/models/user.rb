@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validates :reset_password_token, uniqueness: true, allow_nil: true
 
   def initials
+    return '' if fullname.nil? || fullname.empty?
     fullname.split.map(&:first).join.upcase
   end
 end
