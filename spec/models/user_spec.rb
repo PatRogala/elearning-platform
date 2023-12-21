@@ -15,19 +15,19 @@ RSpec.describe User do
     it "return empty string if fullname is nil" do
       user.fullname = nil
 
-      expect(user.initials).to eq('')
+      expect(user.initials).to eq("")
     end
 
     it "return initials in uppercase if fullname is present" do
       user.fullname = "John Doe"
 
-      expect(user.initials).to eq('JD')
+      expect(user.initials).to eq("JD")
     end
 
-    it "should handle fullname with one word" do
+    it "handles fullname with one word" do
       user.fullname = "John"
 
-      expect(user.initials).to eq('J')
+      expect(user.initials).to eq("J")
     end
   end
 end
