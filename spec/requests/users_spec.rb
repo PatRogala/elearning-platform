@@ -53,7 +53,7 @@ RSpec.describe "Users" do
     describe "PUT /profile" do
       it "returns http redirect" do
         put profile_path, params: { user: { fullname: "New Name" }, format: :turbo_stream }
-        expect(response).to have_http_status(:success)
+        expect(response).to have_http_status(:redirect)
       end
 
       it "updates the user" do
@@ -64,6 +64,11 @@ RSpec.describe "Users" do
 
       it "renders the edit template if the user is invalid" do
         put profile_path, params: { user: { fullname: nil } }
+        expect(response).to render_template(:edit)
+      end
+
+      it "validates the avatar" do
+        put profile_path, params: { user: { avatar: fixture_file_upload("invalid.txt") } }
         expect(response).to render_template(:edit)
       end
     end
