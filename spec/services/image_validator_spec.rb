@@ -9,7 +9,7 @@ RSpec.describe "ImageValidator" do
   describe "#valid?" do
     context "when image is valid" do
       it "returns true" do
-        expect(image_validator.valid?).to be_truthy
+        expect(image_validator).to be_valid
       end
     end
 
@@ -17,7 +17,7 @@ RSpec.describe "ImageValidator" do
       let(:image) { Rack::Test::UploadedFile.new("spec/fixtures/files/invalid.txt", "text/plain") }
 
       it "returns false" do
-        expect(image_validator.valid?).to be_falsey
+        expect(image_validator).not_to be_valid
       end
     end
   end

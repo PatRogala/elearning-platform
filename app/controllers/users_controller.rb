@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to profile_path, notice: I18n.t('users.update.success')
+      redirect_to profile_path, notice: I18n.t("users.update.success")
     else
       render :edit, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def validate_avatar
-    return unless params[:user][:avatar].present?
+    return if params[:user][:avatar].blank?
 
     @image_validator = ImageValidator.new(params[:user][:avatar], @user)
     render :edit unless @image_validator.valid?
