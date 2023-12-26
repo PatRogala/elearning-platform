@@ -3,3 +3,6 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
+
+import ProfileUpdateAvatarController from "./profile_update_avatar_controller"
+application.register("profile-update-avatar", ProfileUpdateAvatarController)
