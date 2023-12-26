@@ -8,6 +8,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
+    "ace-builds": "^1.32.2",
     "autoprefixer": "^10.4.16",
     "esbuild": "^0.19.9",
     "postcss": "^8.4.32",

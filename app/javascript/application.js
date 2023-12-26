@@ -3,8 +3,6 @@ import "@hotwired/turbo-rails"
 import "preline/preline.js"
 import "./controllers"
 import "./utils/themeSwitcher"
-import "./utils/heroCodeEditor"
-
 
 // Add turbo:load event listener to reinitialize
 // HSStaticMethods from Preline

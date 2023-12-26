@@ -20,13 +20,11 @@
       </div>
       <!-- End Col -->
 
-      <div class="relative ms-4 mt-10">
-        <%#= image_tag "hero.png", class: "w-full rounded-md" %>
-        <div id="code-hero" class="w-full relative h-[500px]">
+      <div class="relative ms-4 mt-10" data-controller="hero-code-editor">
+        <div id="code-hero" class="w-full relative h-[500px]" data-hero-code-editor-target="editorDiv">
         </div>
 
         <div class="absolute inset-0 -z-[1] w-full h-full rounded-md mt-4 -mb-4 me-4 -ms-4 lg:mt-6 lg:-mb-6 lg:me-6 lg:-ms-6"></div>
-
       </div>
       <!-- End Col -->
     </div>
