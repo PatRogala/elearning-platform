@@ -1,22 +1,21 @@
-document.addEventListener('turbo:load', () => {
-  initHeroCodeEditor();
-});
+import { Controller } from "@hotwired/stimulus"
+import ace from "ace-builds/src-min/ace"
+import "ace-builds/src-min/mode-ruby"
+import "ace-builds/src-min/theme-chrome"
+import "ace-builds/src-min/theme-tomorrow_night_bright"
+import "ace-builds/src-min/keybinding-vscode"
 
-// Create a new MutationObserver instance for theme changes
-const observer = new MutationObserver((mutationsList) => {
-  // Look through all mutations that just occured
-  for(let mutation of mutationsList) {
-    // If the class attribute was modified
-    if (mutation.attributeName === 'class') {
-      initHeroCodeEditor();
-    }
+// Connects to data-controller="hero-code-editor"
+export default class extends Controller {
+  static targets = ["editorDiv"]
+  editorDivTarget: HTMLDivElement
+
+  connect() {
+    this.initHeroCodeEditor()
+    this.setupThemeObserver()
   }
-});
 
-const initHeroCodeEditor = () => {
-  const editor_div = document.getElementById('code-hero')
-
-  if (editor_div) {
+  initHeroCodeEditor() {
     const editor = ace.edit("code-hero");
     editor.setOptions({
       mode: "ace/mode/ruby",
@@ -71,7 +70,20 @@ end
     // Don't select the text
     editor.clearSelection();
   }
-}
 
-// Start observing the document with the configured parameters
-observer.observe(document.documentElement, { attributes: true });
+  setupThemeObserver() {
+    // Create a new MutationObserver instance for theme changes
+    const observer = new MutationObserver((mutationsList) => {
+      // Look through all mutations that just occured
+      for(let mutation of mutationsList) {
+        // If the class attribute was modified
+        if (mutation.attributeName === 'class') {
+          this.initHeroCodeEditor();
+        }
+      }
+    });
+
+    // Start observing the target node for configured mutations
+    observer.observe(document.documentElement, { attributes: true });
+  }
+}

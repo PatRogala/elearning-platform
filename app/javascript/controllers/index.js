@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import HeroCodeEditorController from "./hero_code_editor_controller"
+application.register("hero-code-editor", HeroCodeEditorController)
+
 import ProfileUpdateAvatarController from "./profile_update_avatar_controller"
 application.register("profile-update-avatar", ProfileUpdateAvatarController)
