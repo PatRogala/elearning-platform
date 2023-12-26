@@ -1,13 +1,13 @@
 <%= form_for(user, url: user_path(user), method: :patch, html: { class: "mt-5" }) do |f| %>
   <div>
     <%= render "devise/shared/error_messages", resource: user %>
-    <div class="mt-5">
+    <div class="mt-5" data-controller="profile-update-avatar">
       <%= f.label :avatar, "Avatar", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
       <div class="flex items-center gap-4">
-        <div id="avatar_prev">
+        <div data-profile-update-avatar-target="avatarPreview">
           <%= avatar_or_default_for(user, variant: :medium, class_name: "h-[70px] w-[70px]") %>
         </div>
-        <%= f.file_field :avatar, class: "w-[70%] block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-dark file:text-text file:dark:text-text-dark hover:file:bg-primary-dark file:disabled:opacity-50 file:disabled:pointer-events-none dark:file:bg-primary dark:hover:file:bg-primary", id: "profile_avatar_input" %>
+        <%= f.file_field :avatar, class: "w-[70%] block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-dark file:text-text file:dark:text-text-dark hover:file:bg-primary-dark file:disabled:opacity-50 file:disabled:pointer-events-none dark:file:bg-primary dark:hover:file:bg-primary", data: { profile_update_avatar_target: "avatarInput", action: "change->profile-update-avatar#updateAvatar" } %>
       </div>
     </div>
 
