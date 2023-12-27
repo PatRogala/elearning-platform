@@ -9,3 +9,6 @@ application.register("hero-code-editor", HeroCodeEditorController)
 
 import ProfileUpdateAvatarController from "./profile_update_avatar_controller"
 application.register("profile-update-avatar", ProfileUpdateAvatarController)
+
+import ThemeSwitcherController from "./theme_switcher_controller"
+application.register("theme-switcher", ThemeSwitcherController)
