@@ -1,3 +1,46 @@
+import { Controller } from "@hotwired/stimulus"
+
+// This controller is used to switch between light and dark themes.
+// It is used by Preline's theme switcher.
+// TODO: Would be nice to rewrite this in TypeScript.
+
+// Connects to data-controller="theme-switcher"
+export default class extends Controller {
+  connect() {
+    HSThemeAppearance.init()
+    this.addEventListeners()
+  }
+
+  addEventListeners() {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (HSThemeAppearance.getOriginalAppearance() === 'auto') {
+          HSThemeAppearance.setAppearance('auto', false)
+      }
+    })
+
+    const $clickableThemes = document.querySelectorAll('[data-hs-theme-click-value]')
+    const $switchableThemes = document.querySelectorAll('[data-hs-theme-switch]')
+
+    $clickableThemes.forEach($item => {
+        $item.addEventListener('click', () => HSThemeAppearance.setAppearance($item.getAttribute('data-hs-theme-click-value'), true, $item))
+    })
+
+    $switchableThemes.forEach($item => {
+        $item.addEventListener('change', (e) => {
+            HSThemeAppearance.setAppearance(e.target.checked ? 'dark' : 'default')
+        })
+
+        $item.checked = HSThemeAppearance.getAppearance() === 'dark'
+    })
+
+    window.addEventListener('on-hs-appearance-change', e => {
+        $switchableThemes.forEach($item => {
+            $item.checked = e.detail === 'dark'
+        })
+    })
+  }
+}
+
 const HSThemeAppearance = {
   init() {
       const defaultTheme = 'default'
@@ -50,33 +93,3 @@ const HSThemeAppearance = {
       return localStorage.getItem('hs_theme') || defaultTheme
   }
 }
-HSThemeAppearance.init()
-
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (HSThemeAppearance.getOriginalAppearance() === 'auto') {
-      HSThemeAppearance.setAppearance('auto', false)
-  }
-})
-
-window.addEventListener('turbo:load', () => {
-  const $clickableThemes = document.querySelectorAll('[data-hs-theme-click-value]')
-  const $switchableThemes = document.querySelectorAll('[data-hs-theme-switch]')
-
-  $clickableThemes.forEach($item => {
-      $item.addEventListener('click', () => HSThemeAppearance.setAppearance($item.getAttribute('data-hs-theme-click-value'), true, $item))
-  })
-
-  $switchableThemes.forEach($item => {
-      $item.addEventListener('change', (e) => {
-          HSThemeAppearance.setAppearance(e.target.checked ? 'dark' : 'default')
-      })
-
-      $item.checked = HSThemeAppearance.getAppearance() === 'dark'
-  })
-
-  window.addEventListener('on-hs-appearance-change', e => {
-      $switchableThemes.forEach($item => {
-          $item.checked = e.detail === 'dark'
-      })
-  })
-})
