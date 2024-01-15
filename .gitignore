@@ -46,3 +46,6 @@
 
 # Ignore coverage reports
 /coverage
+
+# Ignore spec examples
+/spec/examples.txt

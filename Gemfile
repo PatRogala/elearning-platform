@@ -4,6 +4,10 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# pry is a runtime developer console and IRB alternative with powerful introspection capabilities
+gem "pry-rails", require: false, group: :development
+gem "pry", require: false, groups: %i[development test]
+
 # activestorage-validator validates Active Storage attachments
 gem "activestorage-validator"
 
