@@ -8,9 +8,11 @@ services:
       - "3000:3000"
     volumes:
       - .:/usr/src/app
-      - gem_cache:/usr/local/bundle/gems
+      - gem_cache:/bundle
     depends_on:
       - database
+    environment:
+      - BUNDLE_PATH=/bundle/vendor #New
 
   database:
     image: postgres

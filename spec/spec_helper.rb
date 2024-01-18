@@ -101,8 +101,8 @@ RSpec.configure do |config|
   config.alias_example_group_to :pdescribe, pry: true
   config.alias_example_to :pit, pry: true
 
-  config.after(:example, pry: true) do |example|
+  config.after(:example, :pry) do |example|
     require "pry"
-    binding.pry
+    binding.pry # rubocop:disable Lint/Debugger
   end
 end
