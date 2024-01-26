@@ -1,26 +1,32 @@
 <turbo-frame id="new_course">
-  <div class="border border-accent rounded-md p-10">
-    <div class="card shrink-0 w-full shadow-2xl bg-[#000000ac]">
-      <%= form_for(@course, url: admin_courses_path, html: { class: "card-body" }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: @course %>
-        <div class="form-control">
-          <img id="img_prev" src="#" alt="course image" class="hidden"/>
-          <%= f.label :image, "Upload course image", class: "label text-text" %>
-          <%= f.file_field :image, class: "file-input file-input-bordered file-input-md w-full max-w-xs bg-accent text-text", id: "course_admin_preview_input" %>
+  <div class="border border-accent-dark dark:border-accent rounded-md p-10">
+    <%= form_for(@course, url: admin_courses_path, html: { class: "card-body" }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: @course %>
+      <div class="mt-5" data-controller="course-admin-preview-image">
+        <img id="img_prev" src="#" alt="course image" class="hidden" data-course-admin-preview-image-target="imagePreview"/>
+        <%= f.label :image, "Upload course image", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+        <div class="flex items-center gap-4">
+          <%= f.file_field :image, class: "w-[70%] block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-dark file:text-text file:dark:text-text-dark hover:file:bg-primary-dark file:disabled:opacity-50 file:disabled:pointer-events-none dark:file:bg-primary dark:hover:file:bg-primary", data: { course_admin_preview_image_target: "imageInput", action: "change->course-admin-preview-image#updatePreview" } %>
         </div>
-        <div class="form-control">
-          <%= f.label :name, "Enter course name", class: "label text-text" %>
-          <%= f.text_field :name, autofocus: true, required: true, placeholder: "Rails 101", class: "input input-bordered bg-transparent" %>
-        </div>
-        <div class="form-control">
-          <%= f.label :description, class: "label text-text" %>
-          <%= f.text_area :description, placeholder: "Learn Ruby on Rails", class: "input input-bordered bg-transparent" %>
-        </div>
-        <div class="form-control mt-6">
-          <%= f.submit "Create new course", class: "btn bg-primary text-background" %>
-        </div>
-      <% end %>
-    </div>
-    <%= link_to 'Cancel', admin_courses_path, class: 'btn bg-accent btn-wide text-text' %>
+      </div>
+
+      <div class="mt-5">
+        <%= f.label :name, "Enter course name", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+        <%= f.text_field :name, autofocus: true, required: true, placeholder: "Rails 101", class: "dark:bg-transparent py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" %>
+      </div>
+
+      <div class="mt-5">
+        <%= f.label :email, "Enter course description", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+        <%= f.text_area :description, autofocus: true, required: true, placeholder: "Learn Ruby on Rails", class: "dark:bg-transparent py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" %>
+      </div>
+
+      <div class="mt-5">
+        <%= f.submit "Create new course", class: "bg-primary-dark text-text dark:text-text-dark py-3 px-4 block w-full rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-primary dark:focus:ring-gray-600 coursor-pointer", data: { turbo: false } %>
+      </div>
+
+      <div class="mt-5 flex items-flex-end">
+        <%= link_to 'Cancel', admin_courses_path, class: 'bg-accent-dark text-text dark:text-text py-3 px-4 ml-auto rounded-lg text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-accent dark:focus:ring-gray-600' %>
+      </div>
+    <% end %>
   <div>
 </turbo-frame>
