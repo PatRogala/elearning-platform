@@ -15,6 +15,14 @@
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <div class="grid gap-y-4">
               <%= render "devise/shared/error_messages", resource: resource %>
+
+              <!-- Form Group -->
+              <div>
+                <%= f.label :fullname, "Enter your Fullname", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
+                <div class="relative">
+                  <%= f.text_field :fullname, autofocus: true, required: true, placeholder: "John Doe", class: "py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600", value: "" %>
+              </div>
+
               <!-- Form Group -->
               <div>
                 <%= f.label :email, "Enter your Email", class: "block text-sm mb-2 text-text-dark dark:text-text" %>
