@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CourseAdminPreviewImageController from "./course_admin_preview_image_controller"
+application.register("course-admin-preview-image", CourseAdminPreviewImageController)
+
 import HeroCodeEditorController from "./hero_code_editor_controller"
 application.register("hero-code-editor", HeroCodeEditorController)
 
