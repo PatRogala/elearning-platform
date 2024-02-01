@@ -3,6 +3,11 @@ en:
     courses:
       create:
         success: "Course was successfully created."
+    users:
+      destroy:
+        success: "User deleted."
+        error: "User could not be deleted."
+        admin: "Cannot delete admin user."
   users:
     update:
       success: "User was successfully updated."

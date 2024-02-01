@@ -9,9 +9,9 @@ class Admin::UsersController < Admin::ApplicationController
     @user = User.find_by(id: params[:id])
 
     if @user.destroy
-      redirect_to admin_users_path, notice: "User deleted."
+      redirect_to admin_users_path, notice: I18n.t("admin.users.destroy.success")
     else
-      redirect_to admin_users_path, alert: "User could not be deleted."
+      redirect_to admin_users_path, alert: I18n.t("admin.users.destroy.error")
     end
   end
 
@@ -20,8 +20,8 @@ class Admin::UsersController < Admin::ApplicationController
   def dont_delete_admin_user
     @user = User.find_by(id: params[:id])
 
-    if @user.admin?
-      redirect_to admin_users_path, alert: "Cannot delete admin user."
-    end
+    return unless @user.admin?
+
+    redirect_to admin_users_path, alert: I18n.t("admin.users.destroy.admin")
   end
 end
