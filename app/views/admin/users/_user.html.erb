@@ -1,0 +1,7 @@
+<tr>
+  <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">Patryk Rogala</td>
+  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">rogala.patryk@pm.me</td>
+  <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
+    <%= button_to "Delete", admin_user_path(user), method: :delete, data: { confirm: "Are you sure?" }, class: "inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-accent-dark hover:text-accent disabled:opacity-50 disabled:pointer-events-none dark:text-accent-dark dark:hover:text-accent dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" %>
+  </td>
+</tr>
