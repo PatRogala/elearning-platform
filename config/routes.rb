@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Standard routes
   root to: "home#index"
   resources :users, only: [:update]
+  resources :courses, only: [:index, :show]
 
   # Admin routes
   namespace :admin do

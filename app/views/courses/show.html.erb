@@ -1,0 +1,18 @@
+<div class="min-h-screen w-[95%] mx-auto text-text-dark dark:text-text">
+  <div class="w-full lg:w-[80%] mx-auto mt-10">
+    <%= link_to "Check out more courses", courses_path, class: "underline hover:text-primary" %>
+    <div class="grid grid-cols-1 gap-4 mt-10 md:grid-cols-3">
+      <div class="rounded-lg col-span-2">
+        <%= image_tag @course.image, class: "w-full object-cover" %>
+        <h1 class="text-3xl font-bold mt-5 text-primary-dark dark:text-primary"><%= @course.name %></h1>
+        <pre class="mt-5"><%= @course.description %></pre>
+      </div>
+
+      <div class="col-span-1 h-fit">
+        <h2 class="text-2xl font-semiboldtext-center">TODO: PRICE</h2>
+        <p>TODO: Add a button to enroll in the course</p>
+        <p>TODO: Add a button to add the course to the cart</p>
+        <p>TODO: Add a button to add the course to the wishlist</p>
+      </div>
+    </div>
+  </div>
