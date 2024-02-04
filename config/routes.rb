@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get "/profile/edit", to: "users#edit", as: :edit_profile
   put "/profile", to: "users#update"
   get "/admin", to: "admin/panel#index", as: :admin
+  get "/cookies", to: "home#cookies", as: :cookies
 end

@@ -4,4 +4,6 @@ class HomeController < ApplicationController
   def faq
     @faq_items = FaqItem.all
   end
+
+  def cookies; end
 end
