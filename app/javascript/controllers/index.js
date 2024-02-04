@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CookieConsentController from "./cookie_consent_controller"
+application.register("cookie-consent", CookieConsentController)
+
 import CourseAdminPreviewImageController from "./course_admin_preview_image_controller"
 application.register("course-admin-preview-image", CourseAdminPreviewImageController)
 
