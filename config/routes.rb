@@ -9,11 +9,13 @@ Rails.application.routes.draw do
 
   # Standard routes
   root to: "home#index"
-  resources :users, only: [:update]
+  resource :profile, only: [:show, :edit, :update], controller: "users"
   resources :courses, only: [:index, :show]
+  resources :pages, only: [:show], param: :slug
 
   # Admin routes
   namespace :admin do
+    resource :panel, only: [:show]
     resources :users, only: [:index, :destroy]
     resources :courses, only: [:index, :new, :create]
   end
@@ -28,21 +30,12 @@ Rails.application.routes.draw do
   # * Document why it's needed
   # * Explain anything else non-standard
 
-  # Used to display singular profile page for the current user
-  get "/profile", to: "users#show", as: :profile
+  # Used to display faq static page
+  get "/faq", to: redirect("/pages/faq")
 
-  # Used to display the edit profile page for the current user
-  get "/profile/edit", to: "users#edit", as: :edit_profile
+  # Used to display cookie-policy static page
+  get "/cookie-policy", to: redirect("/pages/cookie-policy")
 
-  # Used to update the current user's profile
-  put "/profile", to: "users#update"
-
-  # Used to display main admin panel
-  get "/admin", to: "admin/panel#index", as: :admin
-
-  # Used to display the FAQ page
-  get "/faq", to: "home#faq", as: :faq
-
-  # Used to display the privacy policy page
-  get "/cookies", to: "home#cookies", as: :cookies
+  # Used to display main admin index page
+  get "/admin", to: redirect("/admin/panel")
 end
