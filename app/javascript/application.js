@@ -2,6 +2,9 @@
 import "@hotwired/turbo-rails"
 import "preline/preline.js"
 import "./controllers"
+import { Turbo } from "@hotwired/turbo-rails"
+
+Turbo.setProgressBarDelay(100)
 
 // Add turbo:load event listener to reinitialize
 // HSStaticMethods from Preline
