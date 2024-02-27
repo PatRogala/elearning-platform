@@ -40,5 +40,9 @@ module LearningPlatform
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # We want to be able to use any feature of our database,
+    # and the SQL format makes that possible
+    config.active_record.schema_format = :sql
   end
 end
