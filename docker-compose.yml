@@ -15,7 +15,7 @@ services:
       - BUNDLE_PATH=/bundle/vendor #New
 
   database:
-    image: postgres
+    image: postgres:15
     environment:
       POSTGRES_PASSWORD: postgres
     volumes:
