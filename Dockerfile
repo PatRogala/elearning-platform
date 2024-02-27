@@ -9,7 +9,9 @@ RUN apt-get update -yqq && \
     apt-get update && \
     apt-get install yarn && \
     apt-get install -yqq libvips && \
-    apt-get install imagemagick
+    apt-get install imagemagick -y && \
+    apt-get install postgresql-client -y
+
 
 COPY Gemfile* /usr/src/app/
 WORKDIR /usr/src/app
