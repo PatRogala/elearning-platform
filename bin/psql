@@ -16,7 +16,7 @@ else
   fi
 fi
 
-echo "[ bin/psql ] Connecting to widgets_development"
+echo "[ bin/psql ] Connecting to elearning_development database..."
 PGPASSWORD=postgres psql -U postgres \
                           -h database \
                           -p 5432 \
