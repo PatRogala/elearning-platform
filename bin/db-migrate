@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -e
+
+if [ "${1}" = -h ] || \
+  [ "${1}" = --help ] || \
+  [ "${1}" = help ]; then
+  echo "Usage: ${0}"
+  echo
+  echo "Applies outstanding migrations to dev and test databases"
+  exit
+else
+  if [ ! -z "${1}" ]; then
+    echo "Unknown argument: '${1}'"
+    exit 1
+  fi
+fi
+
+echo "[ bin/db-migrate ] migrating development schema"
+bin/rails db:migrate
+
+echo "[ bin/db-migrate ] migrating test schema"
+bin/rails db:migrate RAILS_ENV=test
