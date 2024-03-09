@@ -44,5 +44,10 @@ module LearningPlatform
     # We want to be able to use any feature of our database,
     # and the SQL format makes that possible
     config.active_record.schema_format = :sql
+
+    # Internationalization
+    config.i18n.available_locales = %i[en pl]
+    config.i18n.default_locale = :en
+    config.i18n.fallbacks = true
   end
 end

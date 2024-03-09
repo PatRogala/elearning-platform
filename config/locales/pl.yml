@@ -1,0 +1,16 @@
+en:
+  admin:
+    courses:
+      create:
+        success: "Kurs stworzony z powodzeniem."
+    users:
+      destroy:
+        success: "Użytkownik usunięty."
+        error: "Użytkownik nie może być usunięty."
+        admin: "Nie można usunąć administratora."
+  users:
+    update:
+      success: "Użytkownik zaktualizowany z powodzeniem."
+  faq:
+    title: "Twoje pytania, nasze odpowiedzi"
+    subtitle: "Odpowiedzi na najczęściej zadawane pytania."
