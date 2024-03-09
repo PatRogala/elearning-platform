@@ -3,7 +3,7 @@
     <div class="mt-7 bg-background dark:bg-background-dark bg-opacity-5 dark:bg-opacity-5 rounded-xl shadow-sm">
       <div class="p-4 sm:p-7">
         <div class="text-center">
-          <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Sign in</h1>
+          <h1 class="block text-2xl font-bold text-gray-800 dark:text-white"><%= t("devise.sessions.new.title") %></h1>
           <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
             Don't have an account yet?
             <%= link_to "Sign up here", new_user_registration_path, class: "text-primary-dark dark:text-primary decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" %>
@@ -52,7 +52,7 @@
               </div>
               <!-- End Form Group -->
 
-              <%= f.submit "Sign in", class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary-dark text-text dark:bg-primary dark:text-text-dark hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600", data: { turbo: false } %>
+              <%= f.submit t("devise.sessions.new.title"), class: "w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-primary-dark text-text dark:bg-primary dark:text-text-dark hover:opacity-80 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600", data: { turbo: false } %>
             </div>
           <% end %>
           <!-- End Form -->

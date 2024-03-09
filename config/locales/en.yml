@@ -14,3 +14,26 @@ en:
   faq:
     title: "Your questions, answered"
     subtitle: "Answers to the most frequently asked questions."
+  home:
+    title: "Start your journey with"
+    subtitle: "Harness the Power of Code: Build Awesome Projects, Master Programming Languages, and Transform Your Future"
+    check_courses: "Check our courses"
+    questions: "Have a question?"
+  links:
+    courses: "Courses"
+    questions: "FAQ"
+    privacy_policy: "Cookie Policy"
+    profile: "Profile"
+    logout: "Logout"
+    login: "Login"
+  courses:
+    title: "Want to learn something new?"
+  profile:
+    account: "Account"
+    basic_info: "Basic info"
+    personal_info: "Personal info"
+    form:
+      avatar: "Avatar"
+      full_name: "Full name"
+      email: "Email"
+      submit: "Update profile"

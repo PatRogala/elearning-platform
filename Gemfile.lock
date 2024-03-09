@@ -108,6 +108,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.12.0)
+      devise (>= 4.9.0)
     diff-lcs (1.5.1)
     docile (1.4.0)
     dotenv (3.1.0)
@@ -124,6 +126,7 @@ GEM
     faker (3.2.3)
       i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     humanize (2.5.1)
@@ -352,9 +355,11 @@ DEPENDENCIES
   database_consistency
   debug
   devise
+  devise-i18n
   dotenv-rails
   factory_bot_rails
   faker
+  geocoder
   humanize
   image_processing (~> 1.2)
   jbuilder

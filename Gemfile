@@ -4,6 +4,9 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+# We use it to set up user's default locale based on their location
+gem 'geocoder'
+
 # strong_migrations adds safety checks for migrations
 gem "strong_migrations"
 
@@ -37,6 +40,9 @@ gem "rspec-rails", "~> 6.1.0", groups: %i[development test]
 
 # devise is a popular authentication library for Rails
 gem "devise"
+
+# devise-i18n adds translations for Devise
+gem 'devise-i18n'
 
 # inconsistencies and inefficiencies between a database schema and application models
 gem "database_consistency", groups: [:development, :test]

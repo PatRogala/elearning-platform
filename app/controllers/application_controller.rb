@@ -19,6 +19,22 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    if cookies[:locale].nil?
+      country_code = request.location.country_code
+      locale = map_country_to_locale(country_code)
+      cookies.permanent[:locale] = locale
+    end
+    I18n.locale = cookies[:locale] || I18n.default_locale
+  end
+
+  private
+
+  def map_country_to_locale(country_code)
+    case country_code
+    when 'PL'
+      :pl
+    else
+      :en
+    end
   end
 end

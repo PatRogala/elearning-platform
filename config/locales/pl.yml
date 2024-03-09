@@ -14,3 +14,26 @@ en:
   faq:
     title: "Twoje pytania, nasze odpowiedzi"
     subtitle: "Odpowiedzi na najczęściej zadawane pytania."
+  home:
+    title: "Rozpocznij swoją przygodę z"
+    subtitle: "Buduj niesamowite projekty, opanuj języki programowania i zmień swoją przyszłość"
+    check_courses: "Sprawdź nasze kursy"
+    questions: "Masz pytanie?"
+  links:
+    courses: "Kursy"
+    questions: "FAQ"
+    privacy_policy: "Polityka plików cookie"
+    profile: "Profil"
+    logout: "Wyloguj się"
+    login: "Zaloguj się"
+  courses:
+    title: "Chcesz nauczyć się czegoś nowego?"
+  profile:
+    account: "Konto"
+    basic_info: "Podstawowe informacje"
+    personal_info: "Informacje osobiste"
+    form:
+      avatar: "Awatar"
+      full_name: "Imię i nazwisko"
+      email: "Email"
+      submit: "Zaktualizuj profil"
