@@ -5,7 +5,7 @@ source "https://rubygems.org"
 ruby "3.2.2"
 
 # strong_migrations adds safety checks for migrations
-gem "strong_migrations", group: :development
+gem "strong_migrations"
 
 # pry is a runtime developer console and IRB alternative with powerful introspection capabilities
 gem "pry-rails", require: false, group: :development
