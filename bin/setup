@@ -25,12 +25,6 @@ def setup
   # we actually reset the test database
   system!({ "RAILS_ENV" => "test" }, "bin/rails db:reset")
 
-  log "Seeding the development database"
-  # Note that if database was already seeded, this
-  # will fail, but this failure is fixed by
-  # doing a db:migrate
-  system! "bin/rails db:seed || bin/rails db:migrate"
-
   log "All set up."
   log ""
   log "To see commonly-needed commands, run:"
