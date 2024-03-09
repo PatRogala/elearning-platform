@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     if valid_slugs.include?(params[:slug])
       render template: "pages/#{params[:slug]}"
     else
-      render file: "#{Rails.root}/public/404.html", status: :not_found
+      render file: Rails.public_path.join("404.html").to_s, status: :not_found
     end
   end
 
