@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+echo "[ bin/update ] Updating Ruby gems"
+bundle update
+
+# Turning off exit-on-error because the outdated commands
+# will usually exit nonzero and we don't want them
+# to abort this script
+set +e
+
+echo "[ bin/update ] Checking for outdated gems"
+bundle outdated
+
+echo "[ bin/update ] If anything is outdated, you may have"
+echo "[ bin/update ] overly conservative versions pinned"
+echo "[ bin/update ] in your Gemfile"
+echo "[ bin/update ] You should remove these pins if possible"
+echo "[ bin/update ] and see if the app works with the "
+echo "[ bin/update ] latest versions"
+echo "[ bin/update ] Running bin/ci"
+bin/ci
